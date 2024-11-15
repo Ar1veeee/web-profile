@@ -1,13 +1,162 @@
 body {
     font-family: "Sour Gummy", sans-serif;
     font-weight: 600;
+    background-color: #ffff;
+    /*
     background-image: url(https://storage.googleapis.com/alief-web-profil/bg.jpg);
+    */
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+}
+
+#toggle-theme {
+    font-size:30px; 
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    border-radius: 50%; 
+    transition: all 0.3s ease; 
+}
+
+#toggle-theme:hover {
+    transform: scale(1.1); 
+    background-color: rgba(0, 0, 0, 0.1); 
+}
+
+#toggle-mode {
+    background: none;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    color: #333;
+    transition: color 0.3s ease;
+}
+
+header button {
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+header button:hover {
+    background-color: rgba(0, 0, 0, 0.1)
+}
+
+header.dark-mode {
+    background-color: rgba(18, 18, 18, 0.9);
+}
+
+.nav-list a.dark-mode {
+    color: white;
+}
+
+.skill-bar {
+    width: 100%;
+    background: #ddd;
+    border-radius: 5px;
+    margin: 10px 0;
+}
+.skill-fill {
+    height: 20px;
+    background: #12a059;
+    border-radius: 5px;
+    transition: width 1s ease-in-out;
+}
+
+.skill-card {
+    position: relative;
+    padding: 20px;
+    background-color: #06334b;
+    color: white;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.skill-card::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 4px;
+    width: 0;
+    background-color: #2b2817;
+    transition: width 1s ease;
+}
+
+.skill-card:hover::before {
+    width: 100%;
+}
+
+.scroll-animation {
+    opacity: 0;  
+    transform: translateY(100px);  
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;  
+}
+
+.scroll-animation.visible {
+    opacity: 1;  
+    transform: translateY(0);  
+}
+
+
+.typing-container {
+    font-family: 'Courier New', monospace;  
+    font-size: 24px;
+    display: inline-block;
+    white-space: nowrap; 
+    overflow: hidden;    
+    border-right: 2px solid black; 
+}
+
+body.dark-mode aside {
+    background-color: #333;  
+    color: white;  
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);  
+    border: 2px solid white;  
+}
+
+body.dark-mode aside .skill-card {
+    background-color: #444;  
+    color: white;  
+}
+
+body.dark-mode header {
+    color: #444;
+}
+
+body.dark-mode aside .card-project {
+    border: 2px solid white;  
+}
+
+
+body.dark-mode aside {
+    transition: all 0.3s ease;
+}
+
+button.dark-mode {
+    background-color: #444;
+    border: none;
+}
+
+body.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+body.dark-mode .card-project,
+body.dark-mode .batas-card {
+    border: 2px solid white; 
+}
+
+body.dark-mode .card-project,
+body.dark-mode .batas-card {
+    transition: border 0.3s ease; 
 }
 
 main {
@@ -30,6 +179,10 @@ header {
     background-color: rgba(255, 255, 255, 0.9);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     padding: 10px 0px;
+}
+
+.nav-container {
+    display: flex;
 }
 
 .nav-container h1 {
@@ -59,9 +212,15 @@ nav li {
 }
 
 .nav-list li:hover a {
-    background-color: #daab2d;
+    background-color: #d6c084;
     border-radius: 99px;
     padding: 10px 20px;
+}
+
+.icon {
+    width: 25px;
+    height: auto;
+    margin-left: 10px;
 }
 
 .myskill {
@@ -70,11 +229,17 @@ nav li {
     width: 50%;
 }
 
+button p {
+    margin: 0;
+    text-align: center;
+    margin-top: 3px;
+}
+
 .button1 {
     background-color: black;
     box-shadow: 0 14px 18px 0 rgba(0, 0, 0, 0.2);
     border-radius: 30px;
-    height: 34px;
+    height: 40px;
     outline: none;
     border: none;
     padding: 10px 20px;
@@ -84,14 +249,19 @@ nav li {
     cursor: pointer;
 }
 
+.text-button {
+    display: flex;
+}
+
 .button1:hover {
     background-color: #005582;
 }
+
 .button2 {
     background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
     box-shadow: 0 14px 18px 0 rgba(0, 0, 0, 0.2);
     border-radius: 30px;
-    height: 34px;
+    height: 40px;
     outline: none;
     border: none;
     padding: 10px 20px;
@@ -137,7 +307,6 @@ nav li {
     width: 50%;
 }
 
-/* Styling Bagian Skills */
 #skills {
     padding: 50px 20px;
     text-align: center;
@@ -165,7 +334,7 @@ nav li {
 
 .skill-card {
     padding: 15px 20px;
-    background-color: #0077b5;
+    background-color: #98bd48;
     color: white;
     border-radius: 10px;
     font-size: 18px;
@@ -175,11 +344,16 @@ nav li {
 }
 
 .skill-card:hover {
-    background-color: #005582;
+    background-color: #2c3f0c;
+}
+
+.profile-img {
+    height: 250px;
+    margin-top: 0px;
+    border-radius: 20%;
 }
 
 #me img {
-    height: 250px;
     margin-top: 0px;
     border-radius: 20%;
 }
@@ -274,34 +448,31 @@ aside {
     text-align: center;
 }
 
-@media (max-width: 768px) {
+@media screen  and (max-width: 1200px) {
     header {
         flex-direction: column;
         align-items: center;
     }
 
     .skills-container {
-        flex-direction: column;
+        flex-direction: row;
         align-items: center;
     }
 
     #skills {
-        width: 100%;
-        padding: 30px;
-    }
-
-    .skill-card {
         width: 80%;
     }
 
+    .skill-card {
+        width: 10%;
+    }
+
     .heading {
-        flex-direction: column;
         align-items: center;
         text-align: center;
     }
 
     nav ul {
-        flex-direction: column;
         align-items: center;
     }
 
@@ -314,8 +485,8 @@ aside {
         text-align: center;
     }
 
-    #me img {
-        width: 60%;
+    .profile-img {
+        width: 40%;
         height: auto;
     }
 
@@ -323,8 +494,7 @@ aside {
     .batas-card,
     .card-project,
     .side-card {
-        width: 90%;
-        margin: 10px auto;
+        width: 50%;
     }
 
     #project h1 {
@@ -332,109 +502,78 @@ aside {
     }
 }
 
-@media (max-width: 480px) {
-    .heading h1 {
-        font-size: 20px;
+@media screen and (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .button-bio {
+        display: flex;
     }
 
     .skills-container {
-        flex-direction: column;
+        flex-direction: row;
         align-items: center;
     }
 
     #skills {
         width: 80%;
-        padding: 30px;
     }
 
     .skill-card {
-        width: 80%;
+        width: 30%;
     }
 
-    nav a {
-        font-size: 14px;
-    }
-
-    .batas-card,
-    .card-project {
-        width: 100%;
-        padding: 10px;
-    }
-
-    header h1 {
-        font-size: 24px;
-    }
-
-    button {
-        font-size: 10px;
-        padding: 5px 10px;
-    }
-
-    #project h1 {
-        margin-left: 20px;
-    }
-
-    .myproject {
+    .heading {
         align-items: center;
-    }
-
-    .card-project {
-        width: 100%;
-        padding: 15px;
-    }
-
-    #me img {
-        width: 80%;
-        margin-top: 10px;
-    }
-
-    .batas {
-        margin-top: 120px;
-        margin-left: 20px;
-    }
-}
-
-@media (max-width: 414px) {
-    header {
-        padding: 10px;
-    }
-
-    .heading h1 {
-        font-size: 22px;
-    }
-
-    nav a {
-        font-size: 16px;
+        text-align: center;
     }
 
     nav ul {
-        flex-direction: column;
         align-items: center;
     }
 
-    #me img {
-        width: 70%;
+    nav li {
+        margin: 5px 0;
+    }
+
+    #me {
+        width: 80%;
+        text-align: center;
+    }
+
+    #me h1 {
+        margin-top: 100px;
+    }
+
+    #project h1 {
+        margin-top: 50px;
+
+    }
+
+    #project img {
+        width: 100%;
+        height: auto;
+    }
+
+    .profile-img {
+        width: 50%;
+        height: auto;
     }
 
     .card,
     .batas-card,
-    .side-card,
-    .card-project {
-        width: 95%;
-        margin: 10px auto;
+    .card-project,
+    .side-card {
+        width: 70%;
     }
 
-    .bio {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .myproject {
-        flex-direction: column;
-        align-items: center;
+    .batas-card {
+        margin-top: 280px;
     }
 
     #project h1 {
-        font-size: 18px;
+        margin-left: 20px;
     }
 }

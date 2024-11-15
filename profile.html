@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profile</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -14,6 +14,10 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&family=Raleway:ital,wght@0,100..900;1,100..900&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
+    <script src="./assets/js/darkmode.js"></script>
+    <script src="./assets/js/scroll-animation.js"></script>
+    <script src="./assets/js/typing-text.js"></script>
+    <script src="https://kit.fontawesome.com/30198f0eef.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -23,7 +27,8 @@
         <div class="heading">
             <div>
                 <div class="nav-container">
-                    <h1>Alief Arifin</h1>
+                    <img class="icon" src="./assets/img/shines.png" alt="">
+                    <h1 style="margin-left: 10px;">Alief Arifin</h1>
                 </div>
             </div>
             <nav class="nav-list">
@@ -33,6 +38,9 @@
                     <li><a href="#skills">Skills</a></li>
                 </ul>
             </nav>
+            <button id="toggle-theme" onclick="toggleDarkMode()">
+                <i id="theme-icon" class="fa-solid fa-moon"></i>
+            </button>
 
         </div>
     </header>
@@ -41,7 +49,10 @@
             <article id="me" class="">
                 <div class="bio">
                     <div style="margin-bottom: 20px;">
-                        <h1>Hello, I'm Al!</h1>
+                        <div class="typing-container">
+                            <span id="typing-text"></span>
+                        </div>
+                        
                         <p>
                             Welcome to my profile! I’m a backend developer and cloud enthusiast with a strong foundation
                             in networking. Expertise lies in building robust backend systems, designing scalable cloud
@@ -53,16 +64,22 @@
                             shared interests, feel
                             free to reach out!
                         </p>
-                        <button class="button1" onclick="window.open('https://www.linkedin.com/in/alief-arifin-mahardiko-335502235/', '_blank')">
-                            Connect on LinkedIn
-                        </button>
-                        <button class="button2" onclick="window.open('https://www.instagram.com/aliefarfn/', '_blank')">
-                            Follow my Instagram
-                        </button>
+                        <div class="button-bio">
+                            <button class="button1"
+                                onclick="window.open('https://www.linkedin.com/in/alief-arifin-mahardiko-335502235/', '_blank')">
+                                Connect on LinkedIn
+                            </button>
+                            <button class="button2"
+                                onclick="window.open('https://www.instagram.com/aliefarfn/', '_blank')">
+                                <div class="text-button">
+                                    <p>Follow me on
+                                    </p>
+                                    <img class="icon" src="./assets/img/instagram.png" alt="">
+                                </div>
+                            </button>
+                        </div>
                     </div>
-                    <div >
-                        <img src="https://storage.googleapis.com/alief-web-profil/profile.png" alt="">
-                    </div>
+                    <img class="profile-img" src="https://storage.googleapis.com/alief-web-profil/profile.png" alt="">
                 </div>
             </article>
             <div class="batas">
@@ -73,7 +90,7 @@
             <article id="project">
                 <h1>My Project & Experiences</h1>
                 <div class="myproject">
-                    <div class="card-project">
+                    <div class="card-project scroll-animation" id="section1">
                         <div class="image-project">
                             <img src="https://storage.googleapis.com/alief-web-profil/project-1.png" alt="">
                         </div>
@@ -84,7 +101,7 @@
                             Create an expedition service website using .vb with CRUD and transaction features.
                         </p>
                     </div>
-                    <div class="card-project">
+                    <div class="card-project scroll-animation" id="section2">
                         <div class="image-project">
                             <img src="https://storage.googleapis.com/alief-web-profil/project-2.png" alt="">
                         </div>
@@ -96,7 +113,7 @@
                             transaction features.
                         </p>
                     </div>
-                    <div class="card-project">
+                    <div class="card-project scroll-animation" id="section3">
                         <div class="image-project">
                             <img src="https://storage.googleapis.com/alief-web-profil/project-3.jpg" alt="">
                         </div>
@@ -104,12 +121,12 @@
                             Air Quality Detector
                         </h2>
                         <p class="isi-project">
-                            In the PKM 2023 program, my team and I made an IoT device to detect 
+                            In the PKM 2023 program, my team and I made an IoT device to detect
                             air quality, I as an IoT Engineer have the task of building devices
-                             and programming devices.
+                            and programming devices.
                         </p>
                     </div>
-                    <div class="card-project">
+                    <div class="card-project scroll-animation" id="section4">
                         <div class="image-project">
                             <img src="https://storage.googleapis.com/alief-web-profil/project-4.jpg" alt="">
                         </div>
@@ -117,8 +134,8 @@
                             Water Quality Detector
                         </h2>
                         <p class="isi-project">
-                            In the INNOVILLAGE program organized by Telkom & BUMN, my team and I made an IoT device 
-                            based on Mobile App, I as an IoT engineer was in charge of building 
+                            In the INNOVILLAGE program organized by Telkom & BUMN, my team and I made an IoT device
+                            based on Mobile App, I as an IoT engineer was in charge of building
                             the device and programming the device.
                         </p>
                     </div>
@@ -127,15 +144,26 @@
             <aside id="skills">
                 <h2>My Skills</h2>
                 <div class="skills-container">
-                    <div class="skill-card">HTML</div>
-                    <div class="skill-card">CSS</div>
-                    <div class="skill-card">JavaScript</div>
-                    <div class="skill-card">PHP</div>
-                    <div class="skill-card">Node.js</div>
-                    <div class="skill-card">Express</div>
-                    <div class="skill-card">Hapi</div>
-                    <div class="skill-card">Networking</div>
-                    <div class="skill-card">IoT</div>
+                    <div class="skill-card" onclick="window.open('https://en.wikipedia.org/wiki/HTML', '_blank')">HTML
+                    </div>
+                    <div class="skill-card" onclick="window.open('https://en.wikipedia.org/wiki/CSS', '_blank')">CSS
+                    </div>
+                    <div class="skill-card"
+                        onclick="window.open('https://simple.wikipedia.org/wiki/JavaScript', '_blank')">JavaScript</div>
+                    <div class="skill-card" onclick="window.open('https://en.wikipedia.org/wiki/Node.js', '_blank')">
+                        Node.js</div>
+                    <div class="skill-card" onclick="window.open('https://en.wikipedia.org/wiki/Express.js', '_blank')">
+                        Express JS</div>
+                    <div class="skill-card"
+                        onclick="window.open('https://www.codepolitan.com/blog/mengenal/', '_blank')">Hapi JS</div>
+                    <div class="skill-card" onclick="window.open('https://id.wikipedia.org/wiki/PHP', '_blank')">PHP
+                    </div>
+                    <div class="skill-card"
+                        onclick="window.open('https://id.wikipedia.org/wiki/CodeIgniter', '_blank')">Code Igniter</div>
+                    <div class="skill-card" onclick="window.open('https://en.wikipedia.org/wiki/MikroTik', '_blank')">
+                        Mikrotik</div>
+                    <div class="skill-card"
+                        onclick="window.open('https://en.wikipedia.org/wiki/Internet_of_things', '_blank')">IoT</div>
                 </div>
             </aside>
         </div>
